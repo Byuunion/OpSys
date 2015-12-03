@@ -2,12 +2,11 @@ package roundRobin;
 
 public class Process {
 	int id;
-	int totalTime;
+	int timeLeft;
 
-	public Process(int id, int qTime){
+	public Process(int id, int time){
 		this.id = id;
-		this.totalTime = qTime;
-		
+		this.timeLeft = time;
 	}
 
 	public int getId() {
@@ -18,12 +17,12 @@ public class Process {
 		this.id = id;
 	}
 
-	public int getqTime() {
-		return totalTime;
+	public int getTime() {
+		return timeLeft;
 	}
 
-	public void setqTime(int qTime) {
-		this.totalTime = qTime;
+	public void setTime(int time) {
+		this.timeLeft = time;
 	}
 
 	@Override

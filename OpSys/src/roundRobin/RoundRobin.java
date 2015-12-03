@@ -14,27 +14,22 @@ public class RoundRobin {
 		currentTime = System.currentTimeMillis();
 	}
 	
-	public void addProcess(Process p){
+	public void add(Process p){
 		q.add(p);
-	}
-	
-	//remove from queue and return the element removed
-	public Process removProcess(){
-		return q.remove();
 	}
 	
 	public void run(){
 		
 		while (q.size() > 0){
-			if(q.peek().totalTime < qTime){
-				currentTime += q.peek().totalTime;
+			if(q.peek().timeLeft < qTime){
+				currentTime += q.peek().timeLeft;
 				System.out.println(q.toString());
 				System.out.println("System Time in ms: " + currentTime);
 				q.remove();
 			}
 			
 			else{
-				q.peek().totalTime -= qTime;
+				q.peek().timeLeft -= qTime;
 				currentTime += qTime;
 				System.out.println(q.toString());
 				System.out.println("System Time in ms: " + currentTime);
