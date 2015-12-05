@@ -1,13 +1,12 @@
 package discDefrag;
 
-public class DataBlock {
-	
+public class FilePart {
 	private String id;
-	private int location;
+	private int link;
 	
-	public DataBlock(String id, int location){
+	public FilePart(String id, int link){
 		this.id = id;
-		this.location = location;
+		this.link = link;
 	}
 
 	public String getId() {
@@ -18,12 +17,12 @@ public class DataBlock {
 		this.id = id;
 	}
 
-	public int getLocation() {
-		return location;
+	public int getlink() {
+		return link;
 	}
 
-	public void setLocation(int location) {
-		this.location = location;
+	public void setlink(int link) {
+		this.link = link;
 	}
 	
 	@Override
